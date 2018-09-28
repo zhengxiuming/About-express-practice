@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= blog.title %></title>
+  <!-- <script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script> -->
+  <style>
+    html,body{
+      height: 100%;
+    }
+    .not-found{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      color: #7a7a7a;
+    }
+    .not-found span{
+      font-size: 60px;
+    }
+    .not-found a{
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class='not-found'>
+    <div><span>404</span>，您访问的页面找不回来了！</div>
+    <div> <span><i class='time'></i>后</span> <a href="/posts" class='back-home'><span id='sp'>返回首页</span> </a></div>
+  </div>
+  <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+  <script>
+    var count = 5
+    $('.time').html(count)
+    setInterval(function () {
+      if(count<=0){
+        $('#sp').trigger('click')
+        return
+      }
+      count--
+      $('.time').html(count)
+    },1000)
+  </script>
+</body>
+</html>
